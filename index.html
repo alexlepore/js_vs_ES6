@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ES6</title>
+</head>
+  <body>
+
+    <h1>See console</h1>
+    
+    <script>
+        /* This script is devoted to trying to understand the differences between 
+        regular javascript and the infamous ES6 */
+
+        console.log("Javascript vs ES6");
+        console.log("___________________");
+
+        console.log("Beginng with regular javascript objects");
+
+        console.log("JAVASCRIPT");
+        console.log("+++++++++++++");
+        //OBJECTS 
+        /*objects are containers for many types of values
+        written as name:value pairs.
+        names and values being seperated by a colon.
+        name:value
+        or 
+        propertys and property values*/
+
+        console.log("OBJECTS_________");
+
+        var person = {
+            name: "Alex",
+            age: 64,
+            favColor: "green",
+            height : 187
+        };
+        
+        //^^OBJECT LITERAL SYNTAX
+        //used to create single objects
+        //also known as object initialization
+        console.log(person);
+        
+        
+        /*objects can be properties can be accessed in two ways */
+        console.log(person.name);
+        // or
+        console.log(person["name"]);
+        // the length method is used to count the number of characters in a property or string
+        console.log(person.name.length);
+        //outputs 4 there a four characters in the name "Alex"
+        
+
+        console.log("METHODS__________");
+        /*methods are object properties that contain a function definition
+        objects methods can be accessed in a similar fashion
+        ex: person.methodName(); */
+
+        console.log("the write() function is actually a method of the document object");
+        //document.write("whatever");
+
+        //methods can be referenced using the this keyword
+        //this keyword is used a as reference to the current object
+
+        //defining methods is done inside constructors functions    
+
+        /* Methods can also be defined outside of constructor functions*/
+
+        function catName(color, age){
+            this.color = color;
+            this.age = age;
+            this.yearOfBirth = bornYear;
+        }
+        function bornYear() {
+            return 2016 - this.age;
+        }
+        
+        var tobias = new catName("black", 28);
+        console.log(tobias);
+        console.log(tobias.yearOfBirth());
+
+        console.log("CONSTRUCTORS_________");
+
+        function game(title, year){
+            this.title = title;
+            this.year = year;
+            this.changeYear = function(year){
+                this.year = year;
+            }
+        }
+
+        var valve = new game("RedDead", 1998);
+        console.log(valve);
+        valve.changeYear(2018);
+        console.log(valve);
+
+
+        console.log("ARRAYS_________");
+        //arrays store multiple values in a single variable
+        //arrays make it easy to store similar data sets
+
+        var courses = new Array("html", "css", "java");
+
+        console.log(courses);
+
+        //index not defined return undefined example
+
+        console.log(courses[6]);
+
+        /*arrays can also be created by telling it the amount of elements it 
+        will store */
+
+        var name = new Array(2);
+        name[0] = "yon";
+        name[1] = "claud";
+        name[2] = "zoz";
+
+         //array is a special type of object. arrays 
+         //use numbers to access its elements, while and object 
+         //uses name to access it properties. 
+
+         /*arrays are dynamic and can be passed arguments dynamically*/
+
+         var shoes = new Array();
+
+         shoes[0] = "dkw";
+         shoes[1] = "jobsz";
+         //etc
+
+        console.log("THE ARRAY LITERAL_________");
+
+        console.log("the array literal is used for greater readability, execution, and SPEED");
+
+        var speed = ["gtx", "911", "lambo"];
+
+        console.log(speed);
+        console.log("The array literal is the recommended way to declare arrays");
+        
+        console.log("ASSOCIATIVE ARRAYS______");
+        /* many programming languages support arrays with named indexes <-text instead of numbers
+        JAVASCRIPT does not. but it still can be used in a different way, which produces an object */
+
+        var cats = [];
+        cats["name"] = "felix";
+        cats["age"] = 12;
+
+        console.log(cats["age"]);
+
+        console.log("cat is treated as a object instead of an the named \"indexes\" becomes properties of the cats objects");
+
+        console.log("======================================================");
+        console.log("======================================================");
+        console.log("ES6");
+        console.log("+++++++++++");
+
+        /* ES is the scripting language specification to standardize javascript */
+
+        //es is the superset of javascript adding new features to the established language
+
+        var number = 10;
+
+        const b = 14;
+
+        let c = "thiers";
+
+        //type of variable declaration depends on the necessary scope. 
+        //scope is the fundamental concept in programming that defines the visbility of a variable.
+
+        // var defines a varaible gloablly, or locally to an entire function regardless of block scoepe
+
+        //let allows you to declare variables that are limtied to the block, statemnt or expression in which they are used. 
+
+
+
+        
+    </script>
+  </body>
+</html>
