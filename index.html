@@ -10,6 +10,8 @@
     <h1>See console</h1>
     
     <script>
+
+        
         /* This script is devoted showcasing the differences between 
         regular(vanilla) javascript and the infamous ES6 */
         console.log("Javascript vs ES6");
@@ -37,6 +39,7 @@
         //also known as object initialization
         console.log(person);
         
+
         
         /*objects can be properties can be accessed in two ways */
         console.log(person.name);
@@ -271,6 +274,74 @@
         console.log(athlete.health);
 
         ///object made with duplicate property names, the last property will overwrite and be the remaining output.
+
+        //next
+
+        /* computed property names. using []. this is especially useful when we want to create certain objects based on user data */
+        
+        let prop1 = 'legs';
+        let width = 40;
+        let seating = 6;
+
+        let desk ={
+            [prop1]: 4,
+            [`desk_${width}`]: `${seating}`
+        }
+
+        console.log(desk.legs);
+
+        //next 
+
+        /*ES6 new object method assign(), allowing two objects to merge to form a new object*/
+
+        let cat1 = {
+            name: "john",
+            furry: true
+        }
+
+        let cat2 = {
+            name: "jones",
+            furry: false
+        }
+
+
+        let newCat = Object.assign({}, cat1, cat2);
+
+        //first parameter = target, respective parameters are the sources. there can be as many sources as possible. although order is important
+        //properties in the second paramter will be overridden by the properties of the same name in the third parameter and so on. 
+
+        //to retierate the {} was the new target object - we are creating a new object, parameters were the generated sources we are using to create the new object.
+        console.log(newCat);
+
+        //////////
+
+        let cat4 = {
+            name: "john",
+            furry: true
+        }
+
+        let otherNewCat = cat4;
+
+        otherNewCat.name = "REXX";
+
+        console.log(otherNewCat.name);
+
+        ///this will change the base object because otherNewCat references the cat4 object 
+
+        //******to avoid again we use the object assign
+        
+        let person5 = {
+            name: "Billy Joe",
+            from : "MA"
+        }
+
+        let newGuy = Object.assign({}, person5);
+        newGuy.name = "Sam";
+
+        console.log(person5.name);
+        console.log(newGuy.name);
+        //thus we retain the the original object, and create new objects with new property values using object.assign({target}, source, source, source)
+        
     </script>
   </body>
 </html>
