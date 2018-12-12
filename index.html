@@ -342,6 +342,49 @@
         console.log(newGuy.name);
         //thus we retain the the original object, and create new objects with new property values using object.assign({target}, source, source, source)
         
+      
+        //next 
+
+        /*Array Destructuring - a syntax for unpacking values from arrays or object properties into distinct variables. */
+        //upack elements of an array to distinct varaibles
+
+        let array4 = [1, 2, 4];
+        let [one, two , four] = array4;
+
+        console.log(one);
+
+        //in functions as well
+
+        let bam = () => {
+            return [1,3,2];
+        };
+
+        let[yeo, ,toe] = bam();
+
+        console.log(toe);
+
+        //destructuring objects 
+
+        let myCoolOb = {
+            h:120,
+            s:true
+        }
+
+        let {h, s} = myCoolOb;
+
+        console.log(h);
+
+        //
+
+        let z, k;
+        ({z, k} = {z: "waddup", k: "boi"});
+        console.log(z + k);
+
+        /////////////////////
+
+        console.log("ES6 -< Rest Parameters");
+
+        /* 
     </script>
   </body>
 </html>
