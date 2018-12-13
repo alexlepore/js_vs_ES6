@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ES6</title>
+</head>
+  <body>
+
+    <h1>See console</h1>
+    
+    <script>
+    //old constructors
+    function cats(name, color, age){
+        this.name = name;
+        this.color = color;
+        this.age = age;
+        this.stringify = function(){
+            return "This cats name is " + this.name + " it is a " + this.color + "." + "The cat is " + this.age;
+        }
+    }
+
+    var tobias = new cats("Tobias", "Black", 14);
+
+    console.log(tobias);
+    console.log(tobias.stringify());
+    //new constructors
+    //
+
+    class Computers {
+        constructor(make, year, type){
+            this.make = make;
+            this.year = year;
+            this.type = type;
+        }
+        age(){     //   <------------- Es6 way of declaring methods. the method rest essentially in its own block
+            return 2018 -  this.year;
+        }
+    }
+
+    var commodore = new Computers("Commodore Business Machines", 1982, "Home Desktop");
+    console.log(commodore);
+    console.log(commodore.age());
+
+    ////////////////
+    ///another cool thing are getters for example
+
+    class birds {
+        constructor(species, color){
+            this.species = species;
+            this.color = color
+        }
+        get full(){
+            return this.fulltype();
+        }
+        fulltype(){
+            return this.species + " " +this.color;
+        }
+    }
+
+    const redRobin = new birds("Robin", "red");
+    console.log(redRobin.full);
+
+    ///~~~~~~~~~~~~
+    //classes can also be deinfed with class expression like so
+
+    var cars = class{
+        constructor(make, color, model){
+            this.make = make;
+            this.color = color;
+            this.model = model;
+        }
+    }
+ 
+    const explorah = new cars("Ford", "Black", "Explorer");
+    console.log(explorah);
+
+    </script>
+  </body>
+</html>
